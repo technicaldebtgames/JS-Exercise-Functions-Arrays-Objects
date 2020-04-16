@@ -409,14 +409,15 @@ function carMaker(o) {
   let obj = {car_make: null,
              car_model: null,
              car_year: null,
-             odometer: o};
+             odometer: o,
+             drive: function(d) {
 
-  function drive(d) {
+               this.odometer = this.odometer + d;
+               return this.odometer;
 
-    obj.odometer = obj.odometer + d;
-    return obj.odometer;
-
-  }
+             }
+            
+            };
 
   return obj;
 
